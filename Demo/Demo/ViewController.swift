@@ -118,7 +118,7 @@ class ViewController: UITableViewController {
         imageView.image = UIImage(named: "puppies")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        let messageView = BaseView(frame: .zero)
+        let messageView = BaseMessageView(frame: .zero)
         messageView.layoutMargins = .zero
         messageView.backgroundHeight = 120.0
         do {

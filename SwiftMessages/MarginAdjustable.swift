@@ -13,7 +13,7 @@ import UIKit
  `layoutMargins` adjusted by SwiftMessages to account for the height of the
  status bar (when displayed under the status bar) and a small amount of
  overshoot in the bounce animation. `MessageView` implements this protocol
- by way of its parent class `BaseView`.
+ by way of its parent class `BaseMessageView`.
  
  For the effect of this protocol to work, subviews should be pinned to the
  message view's margins and the `layoutMargins` property should not be modified.

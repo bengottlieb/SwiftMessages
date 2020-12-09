@@ -38,7 +38,7 @@ import UIKit
  retain it if you plan to `perform()` more than once.
 
  + note: Some additional details:
- 1. Your view controller's view will be embedded in a `SwiftMessages.BaseView` in order to
+ 1. Your view controller's view will be embedded in a `SwiftMessages.BaseMessageView` in order to
     utilize some SwiftMessages features. This view can be accessed and configured via the
     `SwiftMessagesSegue.messageView` property. For example, you may configure a default drop
     shadow by calling `segue.messageView.configureDropShadow()`.
@@ -157,11 +157,11 @@ open class SwiftMessagesSegue: UIStoryboardSegue {
      The view that is passed to `SwiftMessages.show(config:view:)` during presentation.
      The view controller's view is installed into `containerView`, which is itself installed
      into `messageView`. `SwiftMessagesSegue` does this installation automatically based on the
-     value of the `containment` property. `BaseView` is the parent of `MessageView` and provides a
+     value of the `containment` property. `BaseMessageView` is the parent of `MessageView` and provides a
      number of configuration options that you may use. For example, you may configure a default drop
      shadow by calling `messageView.configureDropShadow()`.
      */
-    public var messageView = BaseView()
+    public var messageView = BaseMessageView()
 
     /**
      The view controller's view is embedded in `containerView` before being installed into

@@ -336,9 +336,9 @@ The suggested method for starting with `MessageView` as a base and __adding new 
   1. (recommended) override the implementation of `AccessibleMessage` as needed to incorporate new elements into Voice Over.
   1. Use one of the nib-loading methods above to load the view.
 
-#### BaseView Class
+#### BaseMessageView Class
 
-[`BaseView`](./SwiftMessages/BaseView.swift) is the superclass of `MessageView` and provides numerous options that aren't specific to the "title + body + icon + button" design of `MessageView`. Custom views that are significantly different from `MessageView`, such as a progress indicator, should subclass `BaseView`.
+[`BaseMessageView`](./SwiftMessages/BaseMessageView.swift) is the superclass of `MessageView` and provides numerous options that aren't specific to the "title + body + icon + button" design of `MessageView`. Custom views that are significantly different from `MessageView`, such as a progress indicator, should subclass `BaseMessageView`.
 
 #### CornerRoundingView Class
 
@@ -355,11 +355,11 @@ High-quality PRs for cool `Animator` implementations are welcome!
 
 #### MarginAdjustable Protocol
 
-[`MarginAdjustable`](./SwiftMessages/MarginAdjustable.swift) is a protocol adopted by `BaseView`. If the view being presented adopts `MarginAdjustable`, SwiftMessages takes ownership of the view's layout margins to ensure ideal spacing across the full range of presentation contexts.
+[`MarginAdjustable`](./SwiftMessages/MarginAdjustable.swift) is a protocol adopted by `BaseMessageView`. If the view being presented adopts `MarginAdjustable`, SwiftMessages takes ownership of the view's layout margins to ensure ideal spacing across the full range of presentation contexts.
 
 #### BackgroundViewable Protocol
 
-[`BackgroundViewable`](./SwiftMessages/BackgroundViewable.swift) is a protocol adopted by `BaseView` and requires that a view provide a single `backgroundView` property. `BaseView` initializes `backgroundView = self`, which you can freely re-assign to any subview.
+[`BackgroundViewable`](./SwiftMessages/BackgroundViewable.swift) is a protocol adopted by `BaseMessageView` and requires that a view provide a single `backgroundView` property. `BaseMessageView` initializes `backgroundView = self`, which you can freely re-assign to any subview.
 
 If the view being presented adopts `BackgroundViewable`, SwiftMessages will ignore touches outside of `backgroundView`. This is important because message views always span the full width of the device. Card and tab-style layouts appear inset from the edges of the device because the message view's background is transparent and `backgroundView` is assigned to a subview constrained to the layout margins. In these layouts, touches in the transparent margins should be ignored.
 
